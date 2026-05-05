@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NOOVI — Caixa, Média e CPF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-in">
+    <a class="logo" data-route="home" href="#">
+      <span class="logo-mark"></span>NOOVI
+    </a>
+    <nav>
+      <a data-route="caixa" href="#">Caixa</a>
+      <a data-route="media" href="#">Média</a>
+      <a data-route="cpf" href="#">CPF</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section id="page-home" class="hero">
+    <span class="pill">✨ Três ferramentas, uma plataforma</span>
+    <h1>Suas ferramentas <span class="grad-text">favoritas</span><br>em um só lugar</h1>
+    <p>Caixa eletrônico, cálculo de média e validação de CPF — rápido, simples e bonito.</p>
+    <div class="grid">
+      <button class="tool-card" data-route="caixa">
+        <div class="tool-icon">💳</div>
+        <h3>Caixa Eletrônico</h3>
+        <p>Veja seu saldo, deposite e saque de forma simples.</p>
+        <div class="arrow">Abrir →</div>
+      </button>
+      <button class="tool-card" data-route="media">
+        <div class="tool-icon">📊</div>
+        <h3>Calculadora de Média</h3>
+        <p>Insira suas notas e descubra a média instantaneamente.</p>
+        <div class="arrow">Abrir →</div>
+      </button>
+      <button class="tool-card" data-route="cpf">
+        <div class="tool-icon">🪪</div>
+        <h3>Validador de CPF</h3>
+        <p>Verifique se um CPF é válido com algoritmo oficial.</p>
+        <div class="arrow">Abrir →</div>
+      </button>
+    </div>
+  </section>
+
+  <!-- CAIXA -->
+  <section id="page-caixa" class="page hidden">
+    <h1>Caixa Eletrônico</h1>
+    <p class="sub">Gerencie seu saldo pessoal.</p>
+    <div class="panel">
+      <div class="label-soft">Seu saldo</div>
+      <div class="balance grad-text" id="saldo">R$ 2000.00</div>
+    </div>
+    <div class="panel">
+      <label>Valor (R$)</label>
+      <input type="number" id="valor-caixa" placeholder="0,00" step="0.01" />
+      <div class="row2">
+        <button class="btn btn-primary" id="btn-depositar">Depositar</button>
+        <button class="btn btn-ghost" id="btn-sacar">Sacar</button>
+      </div>
+      <div id="msg-caixa"></div>
+    </div>
+  </section>
+
+  <!-- MEDIA -->
+  <section id="page-media" class="page hidden">
+    <h1>Calculadora de Média</h1>
+    <p class="sub">Insira suas notas e veja a média na hora.</p>
+    <div class="panel">
+      <div id="notas-list"></div>
+      <button class="add-btn" id="add-nota">+ Adicionar nota</button>
+    </div>
+    <div class="panel center">
+      <div class="label-soft">Sua média</div>
+      <div class="balance grad-text" id="media-valor">0.00</div>
+      <div id="media-badge"></div>
+    </div>
+  </section>
+
+  <!-- CPF -->
+  <section id="page-cpf" class="page hidden">
+    <h1>Validador de CPF</h1>
+    <p class="sub">Verifique se um CPF é válido.</p>
+    <div class="panel">
+      <label>CPF</label>
+      <input id="cpf-input" placeholder="000.000.000-00" inputmode="numeric" />
+      <button class="btn btn-primary" id="btn-cpf" disabled>Validar</button>
+      <div id="msg-cpf"></div>
+    </div>
+  </section>
+</main>
+
+<script src="js/router.js"></script>
+<script src="js/caixa.js"></script>
+<script src="js/media.js"></script>
+<script src="js/cpf.js"></script>
+</body>
+</html>
